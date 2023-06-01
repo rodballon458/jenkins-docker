@@ -3,17 +3,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t rodballon458/rocky-httpd .'
+        sh '/usr/local/bin/docker build -t rodballon458/rocky-httpd .'
       }
     }
     stage('Push') {
       steps {
-        sh 'docker push rodballon458/rocky-httpd:latest'
+        sh '/usr/local/bin/docker push rodballon458/rocky-httpd:latest'
       }
     }
     stage('Run') {
       steps {
-        sh 'kubectl run rocky-httpd --image=rodballon458/rocky-httpd:latest'
+        sh '/usr/local/bin/kubectl run rocky-httpd --image=rodballon458/rocky-httpd:latest'
       }
     }
   }
