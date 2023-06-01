@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Run') {
       steps {
-        sh '/usr/local/bin/kubectl run rocky-httpd --image=rodballon458/rocky-httpd:latest'
+        sh '/usr/local/bin/kubectl get pods rocky-httpd || /usr/local/bin/kubectl run rocky-httpd --image=rodballon458/rocky-httpd:latest'
       }
     }
   }
