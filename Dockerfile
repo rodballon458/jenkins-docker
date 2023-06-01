@@ -1,4 +1,4 @@
-FROM rockylinux
+FROM rockylinux:9
 
 RUN yum -y update
 
